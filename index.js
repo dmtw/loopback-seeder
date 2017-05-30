@@ -9,7 +9,7 @@ exports = module.exports = function (app, options) {
     autoLoad: false,
     migrate: false
   }, options);
-
+  options.models = app.models;
   const seed = app.seed = opts => {
     opts = Object.assign({}, options, opts);
     return PromiseA.try(() => {
